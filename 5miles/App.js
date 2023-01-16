@@ -1,8 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View  , Image} from 'react-native';
 import Input from './input.js'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import Chatroom from './pages/main.js';
 
-export default function App() {
+function Login() {
 
 
   return (
@@ -12,6 +15,21 @@ export default function App() {
       <StatusBar style="auto" />
     </View>
   )
+}
+
+const Stack = createNativeStackNavigator();
+
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen options={{ headerShown:false }} name="Login" component={Login} />
+        <Stack.Screen options={{ headerShown:false }} name="Chatroom" component={Chatroom} />
+
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({

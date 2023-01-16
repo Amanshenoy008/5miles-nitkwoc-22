@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component , useState} from 'react'
 import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
 
 class Inputs extends Component {
@@ -12,14 +12,18 @@ class Inputs extends Component {
    handlePassword = (text) => {
       this.setState({ password: text })
    }
+
    login = (username, pass) => {
      // alert('User-name: \n' + username + 'Password: ' + pass)
+     
    }
+
+   
 
    render() {
     return (
        <View style = {styles.container}>
-         <Text style={styles.label}> USER-NAME :</Text>
+         <Text style={styles.label}> E-mail :</Text>
           <TextInput style = {styles.input}
              underlineColorAndroid = "transparent"
              placeholder = "User-name"
